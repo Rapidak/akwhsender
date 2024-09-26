@@ -1,12 +1,15 @@
 const dotenv = require('dotenv')
 //const mongoose = require('mongoose')
+const cors = require('cors');  // Import CORS
 const logger = require('pino')()
 dotenv.config()
 
 const app = require('./config/express')
 const config = require('./config/config')
 
-app.use(cors());
+app.use(cors({
+    origin: '*' 
+}));
 
 const { Session } = require('./api/class/session')
 
