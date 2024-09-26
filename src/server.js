@@ -6,6 +6,8 @@ dotenv.config()
 const app = require('./config/express')
 const config = require('./config/config')
 
+app.use(cors());
+
 const { Session } = require('./api/class/session')
 
 
